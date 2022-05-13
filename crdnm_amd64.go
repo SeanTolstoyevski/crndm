@@ -1,9 +1,10 @@
-//+build !noasm !appengine
-package main
+//go:build !noasm || !appengine
+// +build !noasm !appengine
+
+package crndm
 
 import (
 	"unsafe"
-//	"fmt"
 )
 
 //go:nosplit
@@ -18,7 +19,6 @@ func _crmdnAsUint32() (v unsafe.Pointer)
 //go:noescape
 func _crmdnAsUint16() (v unsafe.Pointer)
 
-
 func CrmdnAsUint64() uint64 {
 	x := (uint64)(uintptr(_crmdnAsUint64()))
 	return x
@@ -32,9 +32,4 @@ func CrmdnAsUint32() uint32 {
 func CrmdnAsUint16() uint16 {
 	x := (uint16)(uintptr(_crmdnAsUint64()))
 	return x
-}
-
-func main() {
-	x := CrmdnAsUint64()
-	println(x)
 }
