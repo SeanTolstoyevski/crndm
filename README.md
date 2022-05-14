@@ -1,3 +1,3 @@
-# CRNDM - Create Random
- RDRAND Instruction  for Golang
+# CRNDM - Generate Random Numbers with Hardware
+
 
