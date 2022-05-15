@@ -1,6 +1,6 @@
 # CRNDM - Generate Random Numbers with Hardware
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/SeanTolstoyevski/crndm@latest.svg)](https://pkg.go.dev/github.com/SeanTolstoyevski/crndm@latest)
+[![Go Reference](https://pkg.go.dev/badge/github.com/SeanTolstoyevski/crndm.svg)](https://pkg.go.dev/github.com/SeanTolstoyevski/crndm)
 
 ## Benchmark Results:
 ```bash
