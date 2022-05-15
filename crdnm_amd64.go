@@ -1,9 +1,6 @@
 //go:build !noasm || !appengine
 // +build !noasm !appengine
 
-// package crndm (create randoms) is a rdrand instruction package.
-//
-// for more information, see: https://en.wikipedia.org/wiki/RDRAND
 package crndm
 
 import (

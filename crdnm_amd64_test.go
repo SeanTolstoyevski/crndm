@@ -56,6 +56,14 @@ func TestCrmdnAsUint64(t *testing.T) {
 	}
 }
 
+func BenchmarkCrmdnAsUint64(b *testing.B) {
+	var v uint64
+	for i := 0; i < b.N; i++ {
+		v = CrmdnAsUint64()
+	}
+	_ = v
+}
+
 func TestCrmdnAsUint32(t *testing.T) {
 	for i := 0; i < 150; i++ {
 		if CrmdnAsUint32() == 0 {
@@ -64,10 +72,26 @@ func TestCrmdnAsUint32(t *testing.T) {
 	}
 }
 
+func BenchmarkCrmdnAsUint32(b *testing.B) {
+	var v uint32
+	for i := 0; i < b.N; i++ {
+		v = CrmdnAsUint32()
+	}
+	_ = v
+}
+
 func TestCrmdnAsUint16(t *testing.T) {
 	for i := 0; i < 150; i++ {
 		if CrmdnAsUint16() == 0 {
 			t.Fatal("CrmdnAsUint16 returns zero")
 		}
 	}
+}
+
+func BenchmarkCrmdnAsUint16(b *testing.B) {
+	var v uint16
+	for i := 0; i < b.N; i++ {
+		v = CrmdnAsUint16()
+	}
+	_ = v
 }
