@@ -27,3 +27,43 @@ TEXT ·_crmdnAsUint16(SB), $0-8
     LONG $0xf0c70f66             // rdrand    ax
     MOVQ AX, v+0(FP)
     RET
+
+
+
+
+TEXT ·_RdseedAsUint16(SB), $0-16
+
+    MOVQ val+0(FP), DI
+
+    LONG $0xf8c70f66             // rdseed    ax
+    WORD $0xb70f; BYTE $0xc8     // movzx    ecx, ax
+    LONG $0x000001b8; BYTE $0x00 // mov    eax, 1
+    WORD $0x430f; BYTE $0xc1     // cmovae    eax, ecx
+    MOVQ AX, r+8(FP)
+    RET
+
+
+
+
+TEXT ·_RdseedAsUint32(SB), $0-16
+
+    MOVQ val+0(FP), DI
+
+    WORD $0xc70f; BYTE $0xf9     // rdseed    ecx
+    LONG $0x000001b8; BYTE $0x00 // mov    eax, 1
+    WORD $0x430f; BYTE $0xc1     // cmovae    eax, ecx
+    MOVQ AX, r+8(FP)
+    RET
+
+
+
+
+TEXT ·_RdseedAsUint64(SB), $0-16
+
+    MOVQ val+0(FP), DI
+
+    LONG $0xf9c70f48             // rdseed    rcx
+    LONG $0x000001b8; BYTE $0x00 // mov    eax, 1
+    WORD $0x430f; BYTE $0xc1     // cmovae    eax, ecx
+    MOVQ AX, r+8(FP)
+    RET
