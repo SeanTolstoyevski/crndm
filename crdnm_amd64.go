@@ -1,3 +1,9 @@
+// Copyrigth 2022 - mailto:seantolstoyevski@protonmail.com
+//
+// The source codes of this project are licensed under the MIT license.
+//
+// It is provided without any warranty.
+
 //go:build !noasm || !appengine
 // +build !noasm !appengine
 
@@ -47,25 +53,19 @@ func _RdseedAsUint32(val unsafe.Pointer) (r unsafe.Pointer)
 func _RdseedAsUint64(val unsafe.Pointer) (r unsafe.Pointer)
 
 func RdseedAsUint16(seed *uint16) bool {
-	temp := *seed
-	r := _RdseedAsUint16(unsafe.Pointer(&temp))
-	*seed = temp
+	r := _RdseedAsUint16(unsafe.Pointer(seed))
 	i := (uint8)(uintptr(r))
 	return i == 1
 }
 
 func RdseedAsUint32(seed *uint32) bool {
-	temp := *seed
-	r := _RdseedAsUint32(unsafe.Pointer(&temp))
-	*seed = temp
+	r := _RdseedAsUint32(unsafe.Pointer(seed))
 	i := (uint8)(uintptr(r))
 	return i == 1
 }
 
 func RdseedAsUint64(seed *uint64) bool {
-	temp := *seed
-	r := _RdseedAsUint64(unsafe.Pointer(&temp))
-	*seed = temp
+	r := _RdseedAsUint64(unsafe.Pointer(seed))
 	i := (uint8)(uintptr(r))
 	return i == 1
 }

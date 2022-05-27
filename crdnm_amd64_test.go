@@ -1,3 +1,9 @@
+// Copyrigth 2022 - mailto:seantolstoyevski@protonmail.com
+//
+// The source codes of this project are licensed under the MIT license.
+//
+// It is provided without any warranty.
+
 //go:build !noasm || !appengine
 // +build !noasm !appengine
 

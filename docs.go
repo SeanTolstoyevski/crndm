@@ -1,4 +1,10 @@
-// package crndm (create randoms) is a rdrand instruction package.
+// Copyrigth 2022 - mailto:seantolstoyevski@protonmail.com
+//
+// The source codes of this project are licensed under the MIT license.
+//
+// It is provided without any warranty.
+
+// package crndm (create randoms) is a rdrand and rdseed instruction package.
 //
 // For more information about rdrand, see: https://en.wikipedia.org/wiki/RDRAND
 //
